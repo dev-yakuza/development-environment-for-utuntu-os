@@ -1,4 +1,4 @@
-# sudo apt install git
+# sudo apt install -y git
 sudo apt update
 
 # pyenv
@@ -7,10 +7,11 @@ git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
 echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
 echo 'eval "$(pyenv init --path)"' >> ~/.bashrc
+echo 'eval "$(pyenv init -)"' >> ~/.bashrc
+source ~/.bashrc
 
 git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
 echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
-
 source ~/.bashrc
 
 # VSCode
@@ -19,9 +20,9 @@ sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.
 sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
 rm -f packages.microsoft.gpg
 
-sudo apt install apt-transport-https
+sudo apt install -y apt-transport-https
 sudo apt update
-sudo apt install code
+sudo apt install -y code
 
 code --install-extension AlanWalk.markdown-toc
 code --install-extension christian-kohler.npm-intellisense
@@ -89,8 +90,6 @@ sudo apt update
 apt-cache policy docker-ce
 sudo apt install -y docker-ce
 sudo usermod -aG docker ${USER}
-su - ${USER}
-id -nG
 
 # Chrome
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
