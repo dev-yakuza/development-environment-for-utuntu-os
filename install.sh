@@ -73,6 +73,7 @@ code --install-extension sleistner.vscode-fileutils
 code --install-extension hashicorp.terraform
 code --install-extension octref.vetur
 code --install-extension dsznajder.es7-react-js-snippets
+code --install-extension ms-vscode.powershell
 
 # NVM & Node
 sudo apt install -y curl
@@ -96,3 +97,16 @@ wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-ke
 sudo sh -c 'echo "deb https://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
 sudo apt update
 sudo apt install -y google-chrome-stable
+
+# Open shortcut
+echo 'alias open="nautilus"' >> ~/.bashrc
+
+# Mouse scroll
+touch ~/.vmx
+echo 'mouse.vusb.enable = "TRUE"' >> ~/.vmx
+echo 'mouse.vusb.useBasicMouse = "FALSE"' >> ~/.vmx
+echo 'mks.mouse.pixelScrollSensitivity = "1"' >> ~/.vmx
+
+# Install japanese
+sudo apt install -y ibus-anthy
+ibus restart
