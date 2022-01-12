@@ -81,6 +81,7 @@ code --install-extension hashicorp.terraform
 code --install-extension octref.vetur
 code --install-extension dsznajder.es7-react-js-snippets
 code --install-extension ms-vscode.powershell
+code --install-extension arjun.swagger-viewer
 
 # NVM & Node
 sudo apt install -y curl
