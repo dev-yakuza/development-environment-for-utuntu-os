@@ -1,18 +1,25 @@
 # sudo apt install -y git
 sudo apt update
 
+# zsh
+sudo apt install -y zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+git clone https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/themes/powerlevel10k
+chsh -s $(which zsh)
+# ZSH_THEME="powerlevel10k/powerlevel10k"
+
 # pyenv
 sudo apt install -y build-essential libffi-dev libssl-dev zlib1g-dev liblzma-dev libbz2-dev libreadline-dev libsqlite3-dev libopencv-dev tk-dev
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
-echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
-echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
-echo 'eval "$(pyenv init --path)"' >> ~/.bashrc
-echo 'eval "$(pyenv init -)"' >> ~/.bashrc
-source ~/.bashrc
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
+echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
+echo 'eval "$(pyenv init --path)"' >> ~/.zshrc
+echo 'eval "$(pyenv init -)"' >> ~/.zshrc
+source ~/.zshrc
 
 git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
-echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
-source ~/.bashrc
+echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc
+source ~/.zshrc
 
 # VSCode
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
@@ -78,7 +85,7 @@ code --install-extension ms-vscode.powershell
 # NVM & Node
 sudo apt install -y curl
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
-source ~/.bashrc
+source ~/.zshrc
 nvm install v12.16.1
 npm install --global yarn
 npm install -g @vue/cli
@@ -99,7 +106,7 @@ sudo apt update
 sudo apt install -y google-chrome-stable
 
 # Open shortcut
-echo 'alias open="nautilus"' >> ~/.bashrc
+echo 'alias open="nautilus"' >> ~/.zshrc
 
 # Mouse scroll
 touch ~/.vmx
@@ -108,5 +115,4 @@ echo 'mouse.vusb.useBasicMouse = "FALSE"' >> ~/.vmx
 echo 'mks.mouse.pixelScrollSensitivity = "1"' >> ~/.vmx
 
 # Install japanese
-sudo apt install -y ibus-anthy
-ibus restart
+sudo apt install -y fcitx-mozc
