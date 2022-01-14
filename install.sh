@@ -120,5 +120,6 @@ sudo apt install -y fcitx-mozc
 
 # ngrok
 sudo apt update
-sudo apt install -y snapd
-sudo snap install ngrok
+wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
+unzip ngrok-stable-linux-amd64.zip
+sudo mv ./ngrok /usr/bin/ngrok
