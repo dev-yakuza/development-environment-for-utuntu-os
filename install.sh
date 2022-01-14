@@ -117,3 +117,8 @@ echo 'mks.mouse.pixelScrollSensitivity = "1"' >> ~/.vmx
 
 # Install japanese
 sudo apt install -y fcitx-mozc
+
+# ngrok
+sudo apt update
+sudo apt install -y snapd
+sudo snap install ngrok
