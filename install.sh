@@ -87,7 +87,7 @@ code --install-extension arjun.swagger-viewer
 sudo apt install -y curl
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 source ~/.zshrc
-nvm install v12.16.1
+nvm install v14.17.5
 npm install --global yarn
 npm install -g @vue/cli
 
