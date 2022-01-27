@@ -82,6 +82,7 @@ code --install-extension octref.vetur
 code --install-extension dsznajder.es7-react-js-snippets
 code --install-extension ms-vscode.powershell
 code --install-extension arjun.swagger-viewer
+code --install-extension johnsoncodehk.volar
 
 # NVM & Node
 sudo apt install -y curl
